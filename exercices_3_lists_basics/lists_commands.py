@@ -42,5 +42,9 @@ my_list = [1, 8, 4, 43, 2, 2, 132, "Gosho", "Pesho"]
 # for index in range(numbers_to_be_removed):
 #     my_list.remove(min(my_list))
 
-# PRINT ELEMENTS OF LIST WITHOUT PARENTHESES
+# PRINT NUMBERS OF LIST WITHOUT PARENTHESES
 # print(*my_list, sep=", ")
+
+# PRINT STRINGS OF LIST WITHOUT PARENTHESES
+# my_list = ['apple', 'banana', 'orange']
+# print(' '.join(my_list))
