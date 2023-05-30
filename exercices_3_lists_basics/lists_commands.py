@@ -1,8 +1,8 @@
 my_list = [1, 8, 4, 43, 2, 132] # can be used with stings only too
 
 # .SORT
-# my_list.sort(reverse=False) # reverse=False 1-> +inf, reverse=True +inf -> 1
-# print(my_list)
+my_list.sort(reverse=False) # reverse=False 1-> +inf, reverse=True +inf -> 1
+print(my_list)
 
 my_list = [1, 8, 4, 43, 2, 2, 132, "Gosho", "Pesho"]
 
@@ -37,3 +37,10 @@ my_list = [1, 8, 4, 43, 2, 2, 132, "Gosho", "Pesho"]
 # .REMOVE
 # my_list.remove('Gosho')
 # print(my_list)
+
+# REMOVE MIN VALUES FROM A LIST
+# for index in range(numbers_to_be_removed):
+#     my_list.remove(min(my_list))
+
+# PRINT ELEMENTS OF LIST WITHOUT PARENTHESES
+# print(*my_list, sep=", ")
