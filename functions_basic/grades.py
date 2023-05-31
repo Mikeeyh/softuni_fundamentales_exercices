@@ -13,5 +13,6 @@ def solve(grade):
     elif 5.50 <= grade <= 6:
         return "Excellent"
 
+
 print(solve(grade_data))
 
