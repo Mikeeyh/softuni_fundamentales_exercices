@@ -1,6 +1,3 @@
-number = int(input())
-
-
 def loading_bar(value):
     filled_percentage = number // 10
     empty_percentage = 10 - filled_percentage
@@ -14,5 +11,10 @@ def loading_bar(value):
     return result
 
 
+number = int(input())
 total = loading_bar(number)
 print(total)
+
+# OR -------------------------
+
+def loading_bar(some_number)
