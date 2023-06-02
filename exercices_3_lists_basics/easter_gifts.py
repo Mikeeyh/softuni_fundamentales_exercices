@@ -11,3 +11,4 @@ while True:
     my_gifts.append(names_of_the_gifts)
 
     if command == "OutOfStock":
+        pass
