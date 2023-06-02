@@ -6,8 +6,9 @@ def string_to_list(numbers):
     for number in string_of_numbers:
         current_number = int(number)
         list_of_numbers.append(current_number)
-        list_of_numbers.sort(reverse=False) # it can work without this line too
+        list_of_numbers.sort(reverse=False)
     return list_of_numbers
+
 
 # result = string_to_list(string_of_numbers)
 # print(result)
