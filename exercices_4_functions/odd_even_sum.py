@@ -1,6 +1,3 @@
-string_of_numbers = input()
-
-
 def string_to_list(string):
     list_of_numbers = []
     for i in range(len(string_of_numbers)):
@@ -20,5 +17,6 @@ def odd_even_filter(numbers):
     return f'Odd sum = {sum_odd}, Even sum = {sum_even}'
 
 
+string_of_numbers = input()
 print(odd_even_filter(string_of_numbers))
 
