@@ -15,7 +15,7 @@ while budget >= price_for_one_bread:
     bread_counter += 1
 
     if bread_counter % 3 == 0:
-        lost_eggs = bread_counter - 2
+        lost_eggs += bread_counter - 2
 
     total_eggs = colored_eggs - lost_eggs
     budget -= price_for_one_bread
