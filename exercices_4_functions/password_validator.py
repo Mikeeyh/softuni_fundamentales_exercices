@@ -1,22 +1,27 @@
-password = input().split()
-flag = False
-my_list = []
+def validate_password(password):
+    is_valid = True
 
-if not (6 <= len(password) <= 10):
-    flag = True
+    if len(password) not in range(6, 11):
+        print("Password must be between 6 and 10 characters")
+        is_valid = False
 
-for i in password:
-    my_list.append(ord(i))
+    if not password.isalnum():
+        print("Password must consist only of letters and digits")
+        is_valid = False
 
-for y in my_list:
-    if not 48 <= my_list[y] <= 57:
-        flag = True
-    if not 65 <= my_list[y] <= 90:
-        flag = True
-    if not 97 <= my_list[y] <= 122:
-        flag = True
-if flag:
-    print(f'ok')
+    counter_of_digits = 0
+    for character in password:
+        if character.isdigit():
+            counter_of_digits += 1
+
+    if counter_of_digits < 2:
+        print("Password must have at least 2 digits")
+        is_valid = False
+
+    return is_valid
 
 
-
+some_password = input()
+password_is_valid = validate_password(some_password)
+if password_is_valid:
+    print(f"Password is valid")
