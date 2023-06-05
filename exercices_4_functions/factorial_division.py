@@ -1,7 +1,3 @@
-num_1 = int(input())
-num_2 = int(input())
-
-
 def factorial_division(num1, num2):
     def factorial(n):
         if n == 0:
@@ -19,5 +15,7 @@ def factorial_division(num1, num2):
     print(f"The division result is: {formatted_division}")
 
 
+num_1 = int(input())
+num_2 = int(input())
 factorial_division(num_1, num_2)
 
