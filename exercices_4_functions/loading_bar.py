@@ -5,7 +5,7 @@ def loading_bar(some_number):
         filled_percentage = number // 10
         empty_percentage = 10 - filled_percentage
         loading_line = "[" + "%" * filled_percentage + "." * empty_percentage + "]"
-        return f"{number}% {loading_line}\nStill loading..."ll
+        return f"{number}% {loading_line}\nStill loading..."
 
 
 number = int(input())
