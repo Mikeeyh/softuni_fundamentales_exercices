@@ -8,16 +8,22 @@ total_time_left = 0
 total_time_right = 0
 
 for character_index in range(len(sequence_of_numbers)):
-    if counter_left == len(sequence_of_numbers) // 2:
-        if counter_right == len(sequence_of_numbers) // 2:
-            if index_middle == 1:
-                break
+
+    index_middle = len(sequence_of_numbers) // 2
+    if character_index == index_middle:
+        break
+
+    # if counter_left == len(sequence_of_numbers) // 2:
+    #     if counter_right == len(sequence_of_numbers) // 2:
+    #         if index_middle == 1:
+    #             break
 
     left_side = sequence_of_numbers[:character_index + 1]
     right_side = sequence_of_numbers[character_index + 2:]
     counter_left += 1
     counter_right += 1
-    index_middle = len(sequence_of_numbers) - (counter_right + counter_left)
+
+    # index_middle = len(sequence_of_numbers) - (counter_right + counter_left)
 
 mid_position = sequence_of_numbers[counter_left]
 
