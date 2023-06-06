@@ -1,4 +1,4 @@
-def check_winner(field):
+def check_winner(field_of_game):
     # Check rows
     for row in field:
         if row[0] == row[1] == row[2] != 0:
@@ -17,6 +17,7 @@ def check_winner(field):
 
     return 0  # No winner
 
+
 # Example usage:
 field = []
 for _ in range(3):
@@ -30,3 +31,48 @@ elif winner == 2:
     print("Second player won")
 else:
     print("Draw!")
+
+
+# OR -----------------------------------------------------------------------------------
+
+first_string = list(map(int, input().split()))
+second_string = list(map(int, input().split()))
+third_string = list(map(int, input().split()))
+
+first_player = 'First player won'
+second_player = 'Second player won'
+
+if first_string[0] == 1 and second_string[0] == 1 and third_string[0] == 1:
+    print(first_player)
+elif first_string[0] == 2 and second_string[0] == 2 and third_string[0] == 2:
+    print(second_player)
+elif first_string[0] == 1 and second_string[0 + 1] == 1 and third_string[0 + 2] == 1:
+    print(first_player)
+elif first_string[0] == 2 and second_string[0 + 1] == 2 and third_string[0 + 2] == 2:
+    print(second_player)
+elif first_string[0 + 2] == 1 and second_string[0 + 1] == 1 and third_string[0] == 1:
+    print(first_player)
+elif first_string[2] == 2 and second_string[1] == 2 and third_string[0] == 2:
+    print(second_player)
+elif first_string[0 + 1] == 1 and second_string[0 + 1] == 1 and third_string[0 + 1] == 1:
+    print(first_player)
+elif first_string[0 + 1] == 2 and second_string[0 + 1] == 2 and third_string[0 + 1] == 2:
+    print(second_player)
+elif first_string[0 + 2] == 1 and second_string[0 + 2] == 1 and third_string[0 + 2] == 1:
+    print(first_player)
+elif first_string[0 + 2] == 2 and second_string[0 + 2] == 2 and third_string[0 + 2] == 2:
+    print(second_player)
+elif first_string[0] == 1 and first_string[1] == 1 and first_string[2] == 1:
+    print(first_player)
+elif second_string[0] == 1 and second_string[1] == 1 and second_string[2] == 1:
+    print(first_player)
+elif third_string[0] == 1 and third_string[1] == 1 and third_string[2] == 1:
+    print(first_player)
+elif first_string[0] == 2 and first_string[1] == 2 and first_string[2] == 2:
+    print(second_player)
+elif second_string[0] == 2 and second_string[1] == 2 and second_string[2] == 2:
+    print(second_player)
+elif third_string[0] == 2 and third_string[1] == 2 and third_string[2] == 2:
+    print(second_player)
+else:
+    print('Draw!')
