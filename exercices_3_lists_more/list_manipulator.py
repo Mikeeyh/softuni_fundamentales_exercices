@@ -13,8 +13,9 @@ while True:
     if action == "exchange":
         if number < 0 or number >= len(numbers):
             print("Invalid index")
-        first_list = numbers[:number + 1]
-        second_list = numbers[number + 1:]
-        print(second_list + first_list)
+        else:
+            first_list = numbers[:number + 1]
+            second_list = numbers[number + 1:]
+            print(second_list + first_list)
 
     command = input()
