@@ -3,12 +3,12 @@ def center_point(first_x, first_y, second_x, second_y):
     second_point_sum = abs(second_x) + abs(second_y)
 
     if first_point_sum <= second_point_sum:
-        first_x = round(first_x)
-        first_y = round(first_y)
+        first_x = int(first_x)
+        first_y = int(first_y)
         result = f'{first_x, first_y}'
     else:
-        second_x = round(second_x)
-        second_y = round(second_y)
+        second_x = int(second_x)
+        second_y = int(second_y)
         result = f'{second_x, second_y}'
 
     return result
