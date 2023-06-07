@@ -27,7 +27,8 @@ while True:
                 print('No matches')
             else:
                 max_num = max(filtered_list)
-                print(numbers.index(max_num))
+                max_index = len(numbers) - 1 - numbers[::-1].index(max_num)
+                print(max_index)
         elif second_action == "odd":
             filtered_list = [num for num in numbers if num % 2 != 0]
             if not filtered_list:
