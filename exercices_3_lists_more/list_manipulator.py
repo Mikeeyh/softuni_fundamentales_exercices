@@ -35,7 +35,8 @@ while True:
                 print('No matches')
             else:
                 max_num = max(filtered_list)
-                print(numbers.index(max_num))
+                max_index = len(numbers) - 1 - numbers[::-1].index(max_num)
+                print(max_index)
 
     if action == "min":
         if second_action == "even":
@@ -44,13 +45,15 @@ while True:
                 print('No matches')
             else:
                 min_num = min(filtered_list)
-                print(numbers.index(min_num))
+                min_index = len(numbers) - 1 - numbers[::-1].index(min_num)
+                print(min_index)
         elif second_action == "odd":
             filtered_list = [num for num in numbers if num % 2 != 0]
             if not filtered_list:
                 print('No matches')
             else:
                 min_num = min(filtered_list)
-                print(numbers.index(min_num))
+                min_index = len(numbers) - 1 - numbers[::-1].index(min_num)
+                print(min_index)
 
     command = input()
