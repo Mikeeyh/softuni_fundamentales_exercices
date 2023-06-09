@@ -53,6 +53,7 @@ new_version = 0
 for n_1 in range(1):
     for n_2 in range(1):
         for n_3 in range(1):
+
             third += 1
             if third > 9:
                 third = 0
@@ -65,3 +66,15 @@ new_version = f'{first}.{second}.{third}'
 
 print(new_version)
 
+# OR -----------------------------------------------------------
+
+version = [int(number) for number in input().split('.')]
+version[-1] += 1
+
+for index in range(len(version) - 1, -1, -1):
+    if version[index] > 9 and index != 0: # index != 0 to make sure that we will print 10.0.0 if 9.9.9
+        version[index] = 0
+        if index - 1 >= 0: # because we need to make sure that we will not update the first index
+            version[index - 1] += 1
+
+print('.'.join(str(number) for number in version))
