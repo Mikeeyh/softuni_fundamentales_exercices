@@ -28,3 +28,12 @@ def substrings_check(first_str, second_str):
 first_string = input().split(', ')
 second_string = input().split(', ')
 print(substrings_check(first_string, second_string))
+
+# OR --------------------------------------------------------------
+
+first_string = input().split(', ')
+second_string = input().split(', ')
+
+substrings = [first_word for first_word in first_string if any(first_word in second_word for second_word in second_string)]
+
+print(substrings)
