@@ -1,12 +1,10 @@
 message = input()
 words = message.split()
-reversed_words = []
 digit = ''
 letter = ''
 index = 0
 
 for word in words:
-
     for character in word:
         if character.isdigit():
             digit += character
@@ -15,16 +13,17 @@ for word in words:
 
     left_part = letter
     right_part = word[index:]
-    new_word = left_part + right_part
-    reversed_words.append(new_word)
+    new_word = list(left_part + right_part)
+
+    if index == 2:
+        new_word[index - 1], new_word[-1] = new_word[-1], new_word[index - 1]
+    elif index == 3:
+        new_word[index - 2], new_word[-1] = new_word[-1], new_word[index - 2]
+
+    print(''.join(new_word), end=' ')
+
     digit = ''
     letter = ''
     index = 0
-
-print(reversed_words)
-
-
-
-
 
 
