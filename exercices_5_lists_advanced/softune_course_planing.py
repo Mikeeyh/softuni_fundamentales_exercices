@@ -16,12 +16,17 @@ def remove_lesson(list_of_lessons, title):
     return list_of_lessons
 
 
-def swap_lesson(list_of_lessons, title):
-    pass
+def swap_lesson(list_of_lessons, title, index):
+    if title and index_or_lesson_title in list_of_lessons:
+        pass
 
 
 def exercise(list_of_lessons, title):
-    pass
+    if title in list_of_lessons:
+        list_of_lessons.append(title + '-Exercise')
+    else:
+        list_of_lessons.append(title)
+        list_of_lessons.append(title + '-Exercise')
 
 
 lessons = input().split(', ')
@@ -40,7 +45,7 @@ while command != 'course start':
         elif action == 'Remove':
             lessons = remove_lesson(lessons, lesson_title)
         elif action == 'Swap':
-            lessons = swap_lesson(lessons, lesson_title)
+            lessons = swap_lesson(lessons, lesson_title, index_or_lesson_title)
         elif action == 'Exercise':
             lessons = exercise(lessons, lesson_title)
 
