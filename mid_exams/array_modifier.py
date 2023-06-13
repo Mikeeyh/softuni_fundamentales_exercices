@@ -20,7 +20,6 @@ while command != "end":
 
     command = input()
 
+print(*array_numbers, sep=", ")
 # output = ", ".join([str(num) for num in array])
 # print(output)
-
-print(*array_numbers, sep=", ")
