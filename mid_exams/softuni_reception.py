@@ -13,9 +13,7 @@ if students_count % total_efficiency != 0:
 for break_count in range(total_time):
     breaks += 1
     if breaks % 4 == 0:
-        total_time += 1
         breaks = 0
+        total_time += 1
 
 print(f"Time needed: {total_time}h.")
-
-
