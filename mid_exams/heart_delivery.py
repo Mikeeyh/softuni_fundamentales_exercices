@@ -1,17 +1,15 @@
 numbers = list(map(int, input().split('@')))
 command = input()
-
 position = 0
 
 while command != 'Love!':
+
     command = command.split()
     action = command[0]
     index = int(command[1])
-
     if action == 'Jump':
         position = (position + index) % len(numbers)
-    if position > len(numbers):
-        position = 0
+
     if numbers[position] == 0:
         print(f"Place {position} already had Valentine's day.")
     else:
