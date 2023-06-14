@@ -22,7 +22,7 @@ while command != 'Retire':
         start_index = int(command[1])
         end_index = int(command[2])
         damage = int(command[3])
-        if start_index in range(len(status_of_pirate_ship)) and end_index in range(len(status_of_pirate_ship)):
+        if start_index in range(0, len(status_of_pirate_ship)) and end_index in range(0, len(status_of_pirate_ship)):
             for current_index in range(start_index, end_index + 1):
                 status_of_pirate_ship[current_index] -= damage
                 if status_of_pirate_ship[current_index] <= 0:
