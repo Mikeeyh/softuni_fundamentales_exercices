@@ -33,7 +33,7 @@ while command != 'Retire':
     elif action == 'Repair':
         index = int(command[1])
         health = int(command[2])
-        if 0 <= index < len(str(status_of_pirate_ship)):
+        if 0 <= index < len(status_of_pirate_ship):
             if health <= maximum_health_capacity:
                 status_of_pirate_ship[index] += health
             else:
