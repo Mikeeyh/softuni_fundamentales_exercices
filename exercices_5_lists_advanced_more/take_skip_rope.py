@@ -15,6 +15,11 @@ for take, skip in zip(take_list, skip_list):
 
 print(result)
 
+# zip function splits two lists in couples of elements as per indexes
+# [1, 2, 3, 4, 5]
+# [5, 4, 3, 2, 1]
+# with zip we have - index 0 : [1, 5] and index 1: [2, 4] and index 2: [3, 3] and index 3: [4, 2] and index 4: [5, 1]
+
 # OR -----------------------------------------------------------------------------
 
 import re
