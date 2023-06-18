@@ -1,19 +1,49 @@
-employee1_efficiency = int(input())
-employee2_efficiency = int(input())
-employee3_efficiency = int(input())
+first_employee_efficiency_per_hour = int(input())
+second_employee_efficiency_per_hour = int(input())
+third_employee_efficiency_per_hour = int(input())
 students_count = int(input())
-breaks = 0
+hours_counter = 0
+total_time = 0
 
-total_efficiency = employee1_efficiency + employee2_efficiency + employee3_efficiency
-total_time = students_count // total_efficiency
+total_efficiency_per_hour = first_employee_efficiency_per_hour + \
+                            second_employee_efficiency_per_hour + \
+                            third_employee_efficiency_per_hour
 
-if students_count % total_efficiency != 0:
+while students_count > 0:
+    hours_counter += 1
+
+    if hours_counter % 4 == 0:
+        total_time += 1
+        continue
+
     total_time += 1
 
-for break_count in range(total_time):
-    breaks += 1
-    if breaks % 4 == 0:
-        breaks = 0
+    students_count -= total_efficiency_per_hour
+
+print(f"Time needed: {total_time}h.")
+
+
+# OR -----------------------------------------------------------
+
+first_employee_efficiency_per_hour = int(input())
+second_employee_efficiency_per_hour = int(input())
+third_employee_efficiency_per_hour = int(input())
+students_count = int(input())
+hours_counter = 0
+total_time = 0
+
+total_efficiency_per_hour = first_employee_efficiency_per_hour + \
+                            second_employee_efficiency_per_hour + \
+                            third_employee_efficiency_per_hour
+
+while students_count > 0:
+    hours_counter += 1
+    total_time += 1
+
+    if hours_counter % 4 == 0:
         total_time += 1
+        continue
+
+    students_count -= total_efficiency_per_hour
 
 print(f"Time needed: {total_time}h.")
