@@ -16,4 +16,6 @@ elif people > 0 and all(seats == 4 for seats in wagons):
 
 elif people == 0 and all(seats == 4 for seats in wagons):
     print(" ".join(map(str, wagons)))
-    
+
+# OR -----------------------------------------------------
+
