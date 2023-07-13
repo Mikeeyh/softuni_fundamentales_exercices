@@ -18,7 +18,7 @@ key = '496645f6b4ef47238b7bb5994f867ed7'
 geocoder = OpenCageGeocode(key)
 query = str(location)
 results = geocoder.geocode(query)
-print(results) 
+print(results)
 
 lat = results[0]['geometry']['lat']
 lng = results[0]['geometry']['lng']
