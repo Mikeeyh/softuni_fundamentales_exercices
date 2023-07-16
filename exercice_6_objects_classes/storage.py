@@ -34,7 +34,7 @@ class Storage:
             Storage.storage.append(product)
 
     def get_products(self):
-        return self.storage
+        return Storage.storage
 
 
 storage = Storage(4)
