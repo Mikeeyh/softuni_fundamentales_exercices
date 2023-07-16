@@ -1,17 +1,15 @@
 class Weapon:
-    def __init__(self, bullet_counter):
-        self.bullet_counter = bullet_counter
-        self.bullets = [int(number) for number in range(1, self.bullet_counter)]
+    def __init__(self, bullets):
+        self.bullets = bullets
 
     def shoot(self):
-        if len(self.bullets) > 0:
-            self.bullets.pop(0)
-            print("shooting...")
-        else:
-            print("no bullets left")
+        if self.bullets > 0:
+            self.bullets -= 1
+            return f"shooting..."
+        return f"no bullets left"
 
-    def __repr__(self):
-        return f"Remaining bullets: {len(self.bullets)}"
+    def __repr__(self): # with repr method we get what we want. Without using this method it returns an object
+        return f"Remaining bullets: {self.bullets}"
 
 
 weapon = Weapon(5)
