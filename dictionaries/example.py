@@ -46,3 +46,12 @@ student['age'] = 27
 student["address"] = "Sofia"
 print(student)
 
+# how to get all keys from a dictionary
+for key in student.keys():
+    print(key)
+
+# how to change the values by iterating through the keys
+numbers = {1: 2, 2: 4, 3: 8}
+for key in numbers.keys():
+    numbers[key] *= 2
+print(numbers)
