@@ -37,3 +37,12 @@ student = {
 
 print(student)
 print(student['name'])
+print(student.get('name'))
+
+# update value
+student['age'] = 27
+
+#  adding key/value if it does not exist
+student["address"] = "Sofia"
+print(student)
+
