@@ -66,7 +66,6 @@ students = {
 for _ in range(4):
     student_name = input()
     students["names"].append(student_name)
-
 print(students)
 
 # check if a key exists
@@ -94,3 +93,38 @@ stock = {"bread": 1, "milk": 3, "cheese": 5}
 for product, quantity in stock.items():
     print(f"{product}: {quantity}")
 
+# clear() removes all elements from a dictionary
+stock = {"bread": 1, "milk": 3, "cheese": 5}
+stock.clear()
+print(stock)
+
+# copy() returns a copy of a dictionary
+stock = {"bread": 1, "milk": 3, "cheese": 5}
+copied_stock = stock.copy()
+print(stock == copied_stock)
+
+# pop() removes and returns an item from a dictionary having the given key
+stock = {"fruit": "apple", "vegetable": "cucumber"}
+apple = stock.pop("fruit")
+print(stock) # {"vegetable": "cucumber"}
+
+# del an item from a dictionary
+stocks = {"fruit": "apple", "vegetable": "cucumber"}
+del stocks['fruit']
+print(stocks) # {"vegetable": "cucumber"}
+
+# popitem() removes an item that was last inserted and returns it as a tuple - (key,value)
+stock = {"fruit": "apple", "vegetable": "cucumber"}
+print(stock.popitem()) # ("vegetable": "cucumber")
+print(stock) # {"fruit": "apple"}
+
+# adding key/value in a dictionary
+stock = {"fruit": "apple", "vegetable": "cucumber"}
+meat = stock.setdefault('meat', 'chicken')
+print(stock) # {"fruit": "apple", "vegetable": "cucumber", "meat", "chicken"}
+
+# .update() adding key/values from other dict into the main dictionary
+stock = {"fruit": "apple", "vegetable": "cucumber"}
+other_dict = {'others': 'chicken'}
+stock.update(other_dict)
+print(stock) # {"fruit": "apple", "vegetable": "cucumber", "meat": "chicken", 'others': 'chicken'}
