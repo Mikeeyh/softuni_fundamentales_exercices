@@ -128,3 +128,34 @@ stock = {"fruit": "apple", "vegetable": "cucumber"}
 other_dict = {'others': 'chicken'}
 stock.update(other_dict)
 print(stock) # {"fruit": "apple", "vegetable": "cucumber", "meat": "chicken", 'others': 'chicken'}
+
+# NESTED DICTIONARY
+
+# creating a nested dictionary
+students = {1: {"name": "Peter", "age": 22},
+            2: {"name": "Alex", "age": 21}}
+
+# accessing an element
+first_student_name = students[1]["name"]
+print(first_student_name) # Peter
+
+# adding an element
+students[3] = {} # {3: {}}
+students[3]["name"] = "Amy" # {3: {"name": "Amy"}}
+students[3]["age"] = 25 # {3: {"name": "Amy", "age": 25}}
+
+# updating a value
+students[1]["age"] += 1 # Peter's age becomes += 1
+
+# for cycle in nested dictionary
+students = {
+        "Gosho": {"Math": 5, "Science": 6, "English": 6},
+        "Mike": {"Math": 5, "Science": 6, "English": 6},
+        "Maraya": {"Math": 5, "Science": 6, "English": 6}
+}
+
+for student, record in students.items():
+    print(student)
+    for subject, score in record.items():
+        print(subject, score)
+    print()
