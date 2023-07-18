@@ -55,3 +55,29 @@ numbers = {1: 2, 2: 4, 3: 8}
 for key in numbers.keys():
     numbers[key] *= 2
 print(numbers)
+
+# adding list in the dictionary
+students = {
+    "names": ["Ivan", "John"],
+    "age": 25,
+    "major": "Computer Science",
+}
+
+for _ in range(4):
+    student_name = input()
+    students["names"].append(student_name)
+
+print(students)
+
+# check if a key exists
+if "names" in students.keys(): # or: if "names" in students
+    print(students["names"])
+else:
+    print("Error")
+
+# check if a value exists
+if 25 in students.values():
+    print(students.values())
+else:
+    print("Error")
+
