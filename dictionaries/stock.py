@@ -11,6 +11,6 @@ needed_products = input().split()
 
 for product in needed_products:
     if product in stock:
-        print(f"We have {stock[product]} of {product} left.")
+        print(f"We have {stock[product]} of {product} left")
     else:
-        print(f"Sorry, we don't have {stock[product]}.")
+        print(f"Sorry, we don't have {product}")

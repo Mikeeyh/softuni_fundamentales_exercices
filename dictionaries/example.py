@@ -81,3 +81,16 @@ if 25 in students.values():
 else:
     print("Error")
 
+# calculate the number of keys:
+stock = {"bread": 1, "milk": 3, "cheese": 5}
+keys_count = len(stock)
+
+# calculate the number of keys:
+stock = {"bread": 1, "milk": 3, "cheese": 5}
+values_sum = sum(stock.values())
+
+# print the list keys and values (.items())
+stock = {"bread": 1, "milk": 3, "cheese": 5}
+for product, quantity in stock.items():
+    print(f"{product}: {quantity}")
+
