@@ -121,7 +121,7 @@ print(stock) # {"fruit": "apple"}
 # adding key/value in a dictionary
 stock = {"fruit": "apple", "vegetable": "cucumber"}
 meat = stock.setdefault('meat', 'chicken')
-print(stock) # {"fruit": "apple", "vegetable": "cucumber", "meat", "chicken"}
+print(stock) # {"fruit": "apple", "vegetable": "cucumber", "meat": "chicken"}
 
 # .update() adding key/values from other dict into the main dictionary
 stock = {"fruit": "apple", "vegetable": "cucumber"}
@@ -159,3 +159,18 @@ for student, record in students.items():
     for subject, score in record.items():
         print(subject, score)
     print()
+
+# creating a dictionary using comprehension
+data = [("Peter", 22), ("Amy", 18), ("Mike", 24)]
+dictionary = {key: value for (key, value) in data}
+print(dictionary) # {"Peter": 22, "Amy": 18, "Mike": 24}
+
+# creating a dictionary using comprehension + adding values (length of string) to the every key
+fruits = ["apple", "banana", "orange", "mango"]
+fruit_legend = {fruit: len(fruits) for fruit in fruits}
+print(fruit_legend)
+
+# creating a dictionary with cube values of numbers
+numbers = [1, 2, 3]
+cubes = {num: num ** 3 for num in numbers}
+print(cubes) # {1: 1, 2: 8, 3: 27}
