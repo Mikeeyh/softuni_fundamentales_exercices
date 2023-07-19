@@ -21,3 +21,16 @@ for letter in data:
 
 for char, occurrences in dictionary.items():
     print(f"{char} -> {occurrences}")
+
+# OR ------------------------------------------------------
+
+symbols = [char for char in input() if char != " "]
+dictionary = {}
+
+for symbol in symbols:
+    if symbol not in dictionary.keys():
+        dictionary[symbol] = 0
+    dictionary[symbol] += 1
+
+for char, occurrences in dictionary.items():
+    print(f"{char} -> {occurrences}")
