@@ -1,38 +1,31 @@
-force_side_dict = {}
+force_sides = {}
 
-counter_1 = 0
-counter_2 = 0
-
-command = input()
-
-while command != "Lumpawaroo":
-    if "|" in command:
-        command = command.split(" | ")
-        force_side, force_user = command
-
-        if force_side not in force_side_dict.keys():
-            force_side_dict[force_side] = []
-
-        if force_user not in force_side_dict.values():
-            if force_user not in force_side_dict[force_side]:
-                force_side_dict[force_side].append(force_user)
-                counter_1 += 1
-
-    elif "->" in command:
-        command = command.split(" -> ")
-        force_side, force_user = command
-
-        if force_side not in force_side_dict.keys():
-            force_side_dict[force_side] = []
-
-        if force_user not in force_side_dict.values():
-            if force_user not in force_side_dict[force_side]:
-                force_side_dict[force_side].append(force_user)
-                counter_2 += 1
-
+while True:
     command = input()
+    if command == "Lumpawaroo":
+        break
 
-for key, value in force_side_dict.items():
-    print(f"Side:{key}, Members: {counter_1}")
-    for name in value:
-        print(f"! {name}")
+    if " | " in command:
+        force_side, force_user = command.split(" | ")
+        if force_user not in [user for users in force_sides.values() for user in users]:
+            if force_side not in force_sides:
+                force_sides[force_side] = []
+            force_sides[force_side].append(force_user)
+
+    elif " -> " in command:
+        force_user, force_side = command.split(" -> ")
+        for current_side, users in force_sides.items():
+            if force_user in users:
+                users.remove(force_user)
+                break
+
+        if force_side not in force_sides:
+            force_sides[force_side] = []
+        force_sides[force_side].append(force_user)
+        print(f"{force_user} joins the {force_side} side!")
+
+for side, users in force_sides.items():
+    if len(users) > 0:
+        print(f"Side: {side}, Members: {len(users)}")
+        for user in users:
+            print(f"! {user}")
