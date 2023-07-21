@@ -140,10 +140,54 @@ pattern = "[a-zA-Z0-9]+"
 result = re.findall(pattern, text)
 print(result) # ['Python', 'is', 'fun', '66']
 
-# "\d"
-# "\D"
-# "\b"
-# "\s"
-# "\S"
-# "\w"
-# "\W"
+# "\d" returns a match where the string contains digits 0-9
+# "\D" returns a match where the string DOES NOT contain digits
+# "\b" returns a match where the specified characters are at the BEGINNING or at the END of a word
+# "\s" returns a match where the string contains a WHITESPACE character
+# "\S" returns a match where the string DOES NOT contain a WHITESPACE character
+# "\w" returns a match where the string contains any word characters a-z,  A-Z,  0-9 and underscore_character
+# "\W" returns a match where the string DOES NOT contain any word characters
+
+# re.IGNORECASE - ignores if it upper or lower case
+
+# re.M - returns all the matches from different lines
+text = """start one
+start two"""
+print(re.findall('^start', text))
+print(re.findall('^start', text, re.M))
+
+# re.sub - returns the replaced characters for the given characters
+string = 'There are 3 dogs and 4 cats'
+pattern = r'\d'
+result = re.sub(pattern, 'number', string)
+print(result)
+
+# re.search - returns only the first one match !!!
+string = 'The quick brown fox jumped over the lazy dog. Python is fun. Programing is fun!'
+match = re.search(r'\bp\w*', string, re.IGNORECASE)
+if match:
+    print(f"The first word that starts with 'p' is: {match.group()}") # returns Python
+else:
+    print("No words starting with 'p' were found")
+
+# capturing groups
+date = '13/Jul/1928, 10-Nov-1934, 01/Jan-1951,f 25.Dec.1937 23/09/1973, 1/Feb/2016'
+pattern = r"(\d{2})([-./])([A-Z][a-z]{2})\2(\d{4})" # this '\2' means that we copied the cap. group 2 ([-./])
+
+result = re.findall(pattern, date)
+for current_date in result:
+    day = current_date[0]
+    month = current_date[2]
+    year = current_date[3]
+
+    print(f"Day: {day}, Month: {month}, Year: {year}")
+
+# OR
+result = re.finditer(pattern, date)
+for current_date in result:
+    day = current_date.group(1)
+    month = current_date.group(3)
+    year = current_date.group(4)
+
+    print(f"Day: {day}, Month: {month}, Year: {year}")
+
