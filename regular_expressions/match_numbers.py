@@ -12,3 +12,6 @@ for match in matches:
 # -? checks if the number is a negative one. '?' because having a negative number is not required. Between 0-1 -> ?
 # ([0]|[1-9][0-9]*) checks if there is any digits, one or more. However, it will match '00', so that's why we put 1-9
 # (\.\d+)? checks if the decimal point exists
+
+# sting = 'geeksforgeeks'
+# '(?<=geeks)\w' - look behind (from the start of the string) --> returns 'f'
