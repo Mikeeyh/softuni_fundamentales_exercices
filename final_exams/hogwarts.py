@@ -19,7 +19,7 @@ while True:
         index = int(command[1])
         letter = command[2]
 
-        if 0 < index < len(string):
+        if 0 <= index < len(string):
             string = string[:index] + letter + string[index + 1:]
             print("Done!")
         else:
